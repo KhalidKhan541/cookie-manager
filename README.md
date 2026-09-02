@@ -1,0 +1,3 @@
+# cookie-manager
+
+Chrome extension

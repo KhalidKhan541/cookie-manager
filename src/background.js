@@ -1,0 +1,1 @@
+chrome.runtime.onMessage.addListener((msg, s, resp) => { if(msg.action === 'list') { chrome.tabs.query({active: true}, tabs => { chrome.cookies.getAll({url: tabs[0].url}, cookies => resp({cookies})); }); return true; } if(msg.action === 'remove') { chrome.cookies.remove({url: msg.url, name: msg.name}); resp({success: true}); } });
